@@ -1,299 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Premium Digital Asset</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tvhelp.ai — Premium Digital Asset</title>
 
- <style>
-   :root {
-     --bg: #0b0b0f;
-     --card: #12121a;
-     --text: #eaeaf0;
-     --muted: #9b9bb3;
-     --accent: #6cffc1;
-     --accent-2: #7aa2ff;
-   }
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --text: #eaeaf0;
+      --muted: #9b9bb3;
+      --accent: #6cffc1;
+      --accent-2: #7aa2ff;
+    }
 
-   * {
-     box-sizing: border-box;
-     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-   }
+    * {
+      box-sizing: border-box;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-   body {
-     margin: 0;
-     background: radial-gradient(circle at top, #12121a, var(--bg));
-     color: var(--text);
-     min-height: 100vh;
-     padding: 40px 20px;
-   }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #12121a, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
 
-   .container {
-     max-width: 1100px;
-     margin: auto;
-     position: relative;
-   }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
 
-   header {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     margin-bottom: 80px;
-   }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+    }
 
-   .logo {
-     font-weight: 700;
-     letter-spacing: 1px;
-     font-size: 20px;
-   }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
 
-   /* HERO */
-   .hero {
-     text-align: center;
-     margin-bottom: 90px;
-     animation: fadeUp 1s ease forwards;
-   }
+    /* HERO */
+    .hero {
+      text-align: center;
+      margin-bottom: 90px;
+      animation: fadeUp 1s ease forwards;
+    }
 
-   .hero h1 {
-     font-size: clamp(38px, 6vw, 66px);
-     font-weight: 800;
-     margin-bottom: 20px;
-     line-height: 1.1;
-   }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 66px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
 
-   .hero p {
-     max-width: 720px;
-     margin: 0 auto 40px;
-     color: var(--muted);
-     font-size: 18px;
-   }
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 40px;
+      color: var(--muted);
+      font-size: 18px;
+    }
 
-   .anchor {
-     font-size: 14px;
-     color: var(--muted);
-     margin-bottom: 28px;
-     opacity: 0.9;
-   }
+    .anchor {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
 
-   .cta {
-     display: inline-flex;
-     align-items: center;
-     gap: 12px;
-     padding: 16px 28px;
-     border-radius: 12px;
-     background: linear-gradient(135deg, var(--accent), var(--accent-2));
-     color: #000;
-     font-weight: 600;
-     text-decoration: none;
-     transition: transform 0.2s ease, box-shadow 0.2s ease;
-     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-   }
+    .cta {
+      display: inline-flex;
+      padding: 16px 28px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
 
-   .cta:hover {
-     transform: translateY(-2px);
-     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-   }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
 
-   /* MEDIA SLOT */
-   .media {
-     margin: 90px auto;
-     max-width: 900px;
-     border-radius: 18px;
-     overflow: hidden;
-     border: 1px solid rgba(255,255,255,0.06);
-     background: #0f0f16;
-   }
+    /* BROWSER MOCKUP */
+    .browser-wrap {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0f0f16, #0b0b12);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.65);
+      animation: fadeUp 1.2s ease forwards;
+    }
 
-   .media-placeholder {
-     padding: 80px 20px;
-     text-align: center;
-     color: var(--muted);
-     font-size: 14px;
-   }
+    .browser-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: linear-gradient(180deg, #1a1a26, #12121a);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-   /* FEATURES */
-   .grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-     gap: 24px;
-     margin-bottom: 100px;
-   }
+    .browser-controls {
+      display: flex;
+      gap: 8px;
+    }
 
-   .card {
-     background: linear-gradient(180deg, #15151f, #0f0f16);
-     border-radius: 16px;
-     padding: 28px;
-     border: 1px solid rgba(255,255,255,0.05);
-     transition: transform 0.25s ease;
-   }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
 
-   .card:hover {
-     transform: translateY(-6px);
-   }
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
 
-   .card h3 {
-     margin-top: 0;
-     margin-bottom: 12px;
-     font-size: 20px;
-   }
+    .browser-owner {
+      font-size: 12px;
+      color: var(--muted);
+    }
 
-   .card p {
-     color: var(--muted);
-     line-height: 1.6;
-     margin: 0;
-   }
+    .address-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #0b0b12;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 16px;
+    }
 
-   /* FORM */
-   .form-wrap {
-     max-width: 600px;
-     margin: auto;
-     background: linear-gradient(180deg, #15151f, #0f0f16);
-     padding: 40px;
-     border-radius: 20px;
-     border: 1px solid rgba(255,255,255,0.06);
-   }
+    .cursor {
+      animation: blink 1s steps(1) infinite;
+    }
 
-   .form-wrap h2 {
-     text-align: center;
-     margin-bottom: 10px;
-   }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
 
-   .form-wrap p {
-     text-align: center;
-     color: var(--muted);
-     margin-bottom: 30px;
-   }
+    /* FEATURES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 100px;
+    }
 
-   form {
-     display: grid;
-     gap: 16px;
-   }
+    .card {
+      background: linear-gradient(180deg, #15151f, #0f0f16);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform .25s ease;
+    }
 
-   input, textarea {
-     background: #0b0b12;
-     border: 1px solid rgba(255,255,255,0.08);
-     border-radius: 10px;
-     padding: 14px 16px;
-     color: var(--text);
-     font-size: 14px;
-   }
+    .card:hover {
+      transform: translateY(-6px);
+    }
 
-   textarea {
-     resize: vertical;
-     min-height: 120px;
-   }
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
 
-   button {
-     padding: 14px;
-     border-radius: 12px;
-     border: none;
-     background: linear-gradient(135deg, var(--accent), var(--accent-2));
-     color: #000;
-     font-weight: 600;
-     cursor: pointer;
-   }
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-   footer {
-     margin-top: 100px;
-     text-align: center;
-     color: var(--muted);
-     font-size: 14px;
-   }
+    /* FORM */
+    .form-wrap {
+      max-width: 600px;
+      margin: auto;
+      background: linear-gradient(180deg, #15151f, #0f0f16);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
 
-   /* GLOW */
-   .glow {
-     position: absolute;
-     width: 340px;
-     height: 340px;
-     background: radial-gradient(circle, rgba(108,255,193,0.25), transparent 70%);
-     filter: blur(70px);
-     top: -120px;
-     right: -120px;
-     z-index: -1;
-     animation: float 6s ease-in-out infinite;
-   }
+    form {
+      display: grid;
+      gap: 16px;
+    }
 
-   @keyframes fadeUp {
-     from { opacity: 0; transform: translateY(20px); }
-     to { opacity: 1; transform: translateY(0); }
-   }
+    input, textarea {
+      background: #0b0b12;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--text);
+    }
 
-   @keyframes float {
-     0%, 100% { transform: translateY(0); }
-     50% { transform: translateY(20px); }
-   }
- </style>
+    button {
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 100px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .glow {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(108,255,193,0.25), transparent 70%);
+      filter: blur(70px);
+      top: -120px;
+      right: -120px;
+      z-index: -1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      50% { transform: translateY(20px); }
+    }
+  </style>
 </head>
 
 <body>
- <div class="glow"></div>
+  <div class="glow"></div>
 
- <div class="container">
-   <header>
-     <div class="logo">tvhelp.ai</div>
-   </header>
+  <div class="container">
+    <header>
+      <div class="logo">tvhelp.ai</div>
+    </header>
 
-   <section class="hero">
-     <h1>A premium domain for the future of TV support</h1>
-     <p>
-       tvhelp.ai is a clear, intuitive domain suited for AI-powered television support,
-       smart home assistance, troubleshooting platforms, or media-tech startups.
-     </p>
+    <section class="hero">
 
-     <div class="anchor">
-       Premium-tier digital asset · Available via private acquisition
-     </div>
+      <!-- BROWSER MOCKUP -->
+      <div class="browser-wrap">
+        <div class="browser-header">
+          <div class="browser-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="browser-owner">
+            Managed by <strong>i7even.co</strong>
+          </div>
+        </div>
 
-     <a
-       class="cta"
-       href="mailto:contact@i7even.co?subject=Inquiry about tvhelp.ai"
-     >
-       Start a private conversation
-     </a>
-   </section>
+        <div class="address-bar">
+          🔒 <span id="typed-domain"></span><span class="cursor">|</span>
+        </div>
+      </div>
 
+      <h1>A premium domain for the future of TV support</h1>
+      <p>
+        tvhelp.ai is a clear, intuitive domain suited for AI-powered television support,
+        smart home assistance, troubleshooting platforms, or media-tech startups.
+      </p>
 
-   <section class="grid">
-     <div class="card">
-       <h3>Instant clarity</h3>
-       <p>
-         The name immediately communicates purpose — TV help, support, and solutions.
-       </p>
-     </div>
+      <div class="anchor">
+        Premium-tier digital asset · Available via private acquisition
+      </div>
 
-     <div class="card">
-       <h3>AI-ready</h3>
-       <p>
-         Perfect fit for AI assistants, automated troubleshooting, or smart TV platforms.
-       </p>
-     </div>
+      <a class="cta"
+         href="mailto:contact@i7even.co?subject=Inquiry about tvhelp.ai">
+        Start a private conversation
+      </a>
+    </section>
 
-     <div class="card">
-       <h3>Commercial strength</h3>
-       <p>
-         Highly relevant to manufacturers, SaaS platforms, and consumer tech brands.
-       </p>
-     </div>
-   </section>
+    <section class="grid">
+      <div class="card">
+        <h3>Instant clarity</h3>
+        <p>The name immediately communicates purpose.</p>
+      </div>
+      <div class="card">
+        <h3>AI-ready</h3>
+        <p>Perfect for assistants, diagnostics, and automation.</p>
+      </div>
+      <div class="card">
+        <h3>Commercial strength</h3>
+        <p>Highly attractive to manufacturers and SaaS brands.</p>
+      </div>
+    </section>
 
-   <!-- INQUIRY FORM -->
-   <section class="form-wrap">
-     <h2>Domain inquiry</h2>
-     <p>Serious inquiries only. Responses within 24 hours.</p>
+    <section class="form-wrap">
+      <h2>Domain inquiry</h2>
+      <p>Serious inquiries only. Responses within 24 hours.</p>
 
-     <form action="mailto:contact@i7even.co" method="post" enctype="text/plain">
-       <input type="text" name="Name" placeholder="Your name" required />
-       <input type="email" name="Email" placeholder="Your email" required />
-       <textarea name="Message" placeholder="Tell us about your project or offer"></textarea>
-       <button type="submit">Send inquiry</button>
-     </form>
-   </section>
+      <form action="mailto:contact@i7even.co" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Your name" required />
+        <input type="email" name="Email" placeholder="Your email" required />
+        <textarea name="Message" placeholder="Your offer or project"></textarea>
+        <button type="submit">Send inquiry</button>
+      </form>
+    </section>
 
-   <footer>
-     © 2025 tvhelp.ai · Contact: contact@i7even.co
-   </footer>
- </div>
+    <footer>
+      © 2025 tvhelp.ai · Managed by i7even.co
+    </footer>
+  </div>
+
+  <!-- TYPING SCRIPT (CORRECT PLACEMENT) -->
+  <script>
+    const text = "www.tvhelp.ai";
+    const target = document.getElementById("typed-domain");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        target.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 90);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(type, 400);
+    });
+  </script>
 </body>
-
 </html>
-
